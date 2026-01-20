@@ -1,10 +1,10 @@
 import BorderAnimatedButton from "@/components/BorderAnimatedButton";
 import { Button } from "@/components/Button";
-import { ArrowRight,Github,Linkedin,Mail, Code, type LucideIcon } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Code, type LucideIcon } from "lucide-react";
 
 interface SocialInterface {
-  icon : LucideIcon,
-  href : string,
+  icon: LucideIcon;
+  href: string;
 }
 
 export const Hero = () => {
@@ -13,6 +13,32 @@ export const Hero = () => {
     { icon: Linkedin, href: "#" },
     { icon: Mail, href: "#" },
     { icon: Code, href: "#" },
+  ];
+
+  const skills: string[] = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Bootstrap",
+    "Redux",
+    "Axios",
+    "REST APIs",
+    "TailwindCSS",
+    "Node.js",
+    "Express.js",
+    "Mongodb",
+    "Firebase",
+    "EJS",
+    "MVC Architecture",
+    "Postman",
+    "Socket.io",
+    "Jest",
+    "Git/GitHub",
+    "Next.js",
+    "Context API",
+    "JWT",
   ];
 
   return (
@@ -73,7 +99,7 @@ export const Hero = () => {
                 </a>
               ))}
             </div>
-          </div> 
+          </div>
 
           <div className="relative animate-fadeIn animation-delay-300">
             <div className="relative max-w-md mx-auto">
@@ -82,12 +108,32 @@ export const Hero = () => {
                 <img src="/Proffile.png" alt="Muhammed Aflah" className="w-full aspect-[4/5] object-cover rounded-2xl" />
 
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
-                  <div>
-                    <div />
-                  <span>Available for work</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-green-600 rounded-full animate-pulse" />
+                    <span className="text-sm font-medium">Available for work</span>
                   </div>
                 </div>
+
+                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
+                  <div className="text-2xl font-bold text-primary">7+</div>
+                  <div className="text-xs text-muted-foreground">Projects Built.</div>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 animate-fadeIn animation-delay-600">
+          <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I Wrok With</p>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-horizQueue">
+              {
+                [...skills,...skills].map((skill,ind) => (
+                  <div key={ind} className="shrink-0 px-8 py-4">
+                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">{skill}</span>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
