@@ -1,10 +1,12 @@
+import type { ReactNode } from "react";
+
 interface ButtonInterface {
   sm: string;
   default: string;
   lg: string;
 }
 
-export const Button = ({ className = "", size = "default", children }: { className: string; size: string; children: string }) => {
+export const Button = ({ className = "", size = "default", children }: { className?: string; size?: string; children: ReactNode }) => {
   const baseClasses: string =
     "relative overflow-hidden rounded-full font-medium focus:outline-none focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25";
 
