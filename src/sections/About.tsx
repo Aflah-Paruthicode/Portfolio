@@ -1,4 +1,4 @@
-import { Code2, Lightbulb, Rocket, type LucideIcon } from "lucide-react";
+import { Code2, Lightbulb, Rocket,GitBranch, type LucideIcon } from "lucide-react";
 
 interface HighlightsInterface {
   icon: LucideIcon;
@@ -11,20 +11,20 @@ const highLights: HighlightsInterface[] = [
     icon: Code2,
     title: "Clean & Maintainable Code",
     description:
-      "I focus on writing code that is easy to read and simple to follow. I use clear names for my variables and follow industry standards so that other developers can easily understand and work on my projects.",
+      "I write code that is organized and easy to read. I follow simple rules to make sure my projects are easy for me and other developers to update in the future.",
   },
 
   {
     icon: Rocket,
     title: "Performance & Optimization",
     description:
-      "I don't just make things work; I make them fast. I build apps that load quickly and run smoothly by keeping my code lightweight and optimizing images and data handling for a better user experience.",
+      "I care about speed. I build apps that load fast and run smoothly by keeping the code efficient and making sure images and files don't slow things down.",
   },
   {
-    icon: Code2,
+    icon: GitBranch,
     title: "Version Control & Git Flow",
     description:
-      "I am comfortable working in a team environment using Git. I follow professional workflows, manage different branches carefully, and write clear commit messages to keep the project history organized and safe.",
+      "I use Git to manage my projects and track changes. I understand how to work with branches and how to collaborate with a team to keep the code safe and organized.",
   },
   {
     icon: Lightbulb,
@@ -67,6 +67,20 @@ export const About = () => {
                 that are simple and helpful for everyone."
               </p>
             </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {
+              highLights.map((item,ind) => (
+                <div key={ind} className="glass p-6 rounded-2xl animate-fadeIn" style={{
+                  animationDelay : `${(ind+1) * 100} ms`
+                }}>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20 transition-colors"><item.icon/></div>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
