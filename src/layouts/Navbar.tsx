@@ -1,6 +1,6 @@
 import { Button } from "@/components/Button";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface linksInterface {
   href: string;
@@ -15,12 +15,21 @@ const navLinks: linksInterface[] = [
 ];
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isScroll, setIsScroll] = useState<boolean>(false);
 
-    const [isMenuOpen,setIsMenuOpen] = useState<boolean>(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScroll(window.scrollY > 50);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent py-5 z-50">
+    <header className={`fixed top-0 left-0 right-0 ${isScroll ? 'glass-stronger py-3' : 'bg-transparent py-5' } transition-all duration-500 z-50`}>
       <nav className="container mx-auto px-6 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-tight hover:text-primary">
           MA <span className="text-primary">.</span>
@@ -32,7 +41,7 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-          </div> 
+          </div>
         </div>
         <div className="hidden md:block">
           <Button size="sm" className="">
@@ -40,22 +49,24 @@ const Navbar = () => {
           </Button>
         </div>
         <button className="md:hidden p-2 text-foreground cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            { isMenuOpen ? <X size={24 }/> : <Menu size={24} />}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      { isMenuOpen && <div className="md:hidden glass-stronger animate-fadeIn">
-        <div className="container mx-auto p-6 flex flex-col gap-4">
+      {isMenuOpen && (
+        <div className="md:hidden glass-stronger animate-fadeIn">
+          <div className="container mx-auto p-6 flex flex-col gap-4">
             {navLinks.map((link, ind) => (
               <a href={link.href} key={ind} className="text-lg text-muted-foreground hover:text-foreground py-2">
                 {link.label}
               </a>
             ))}
             <Button size="sm" className="">
-            Contact Me
-          </Button>
+              Contact Me
+            </Button>
+          </div>
         </div>
-      </div>}
+      )}
     </header>
   );
 };
