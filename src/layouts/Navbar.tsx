@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="md:hidden glass-stronger animate-fadeIn">
           <div className="container mx-auto p-6 flex flex-col gap-4">
             {navLinks.map((link, ind) => (
-              <a href={link.href} key={ind} className="text-lg text-muted-foreground hover:text-foreground py-2">
+              <a href={link.href} key={ind} onClick={() => setIsMenuOpen(false)} className="text-lg text-muted-foreground hover:text-foreground py-2">
                 {link.label}
               </a>
             ))}
