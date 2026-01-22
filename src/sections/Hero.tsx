@@ -1,6 +1,6 @@
 import BorderAnimatedButton from "@/components/BorderAnimatedButton";
 import { Button } from "@/components/Button";
-import { ArrowRight, Github, Linkedin, Mail, Code, type LucideIcon, ChevronDown } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Code, type LucideIcon, ChevronDown, Download } from "lucide-react";
 
 interface SocialInterface {
   icon: LucideIcon;
@@ -88,7 +88,9 @@ export const Hero = () => {
               <Button size="lg">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <BorderAnimatedButton />
+              <BorderAnimatedButton >
+                <Download className="w-5 h-5" /> Download CV
+              </BorderAnimatedButton>
             </div>
 
             <div className="flex items-center gap-4 animate-fadeIn animation-delay-400">
