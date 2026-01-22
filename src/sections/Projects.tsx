@@ -52,18 +52,18 @@ const projects = [
 export const Projects = () => {
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
-      <div className="absolute top-1/4 right-0 w-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+      <div className="absolute top-10  right-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fadeIn">Featured Work</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fadeIn animation-delay-100 text-secondary-foreground">
-            Projects that <span className="font-serif italic font-normal text-white">make an impact.</span>
+            My Recent <span className="font-serif italic font-normal text-white">Projects and Solutions.</span>
           </h2>
           <p className="text-muted-foreground animate-fadeIn animtion-delay-200">Here are some of the projects I have built while learning new technologies. Each one helped me improve my logic and design skills.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8"> 
           {
             projects.map((project,ind) => (
               <div key={ind} className="group glass rounded-2xl overflow-hidden animate-fadeIn md:row-span-1" style={{
