@@ -63,7 +63,7 @@ export const Hero = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+      <div id="home" className="container mx-auto px-6 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="animate-fadeIn">
