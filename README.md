@@ -11,7 +11,7 @@
 - **Contact:** a direct line to reach me for collaborations or opportunities.
 
 ### Tech Stack
-- **React.js:** for a fast, single page application experience.
+- **React.js + TypeScript :** for a fast, single page application experience.
 - **Tailwind Css:** for clean, utility first styling.
 - **Email Js:** for handling the form submission.  
 
